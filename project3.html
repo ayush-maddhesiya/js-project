@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    #Counter{
+        display: inline;
+        justify-content: center;
+        background-color: #414141;
+    }
+</style>
+<body>
+    <div class="box">
+        <div id="Counter">
+            <h2 id="count">Count is 0</h2>
+        </div>
+        
+    
+        <div id="buttonAll">
+            <button class = "button" id="sub">Dercrease</button>
+            <button class = "button" id="add">Increase</button>
+            <button class = "button" id="reset">Reset</button>
+    
+    
+        </div>
+    </div>
+</body>
+<script>
+
+    const button = document.querySelectorAll(".button");
+    const count = document.querySelector("#count");
+    var number  = 0;
+    button.forEach((button) => {
+        button.addEventListener("click",(e)=>{
+        // console.log("ayush");
+        if(e.target.id === "add"){
+            count.innerHTML = `<h2>Count is ${++number}</h2>`
+        }
+        else if (e.target.id === "sub") {
+            count.innerHTML = `<h2>Count is ${--number}</h2>`
+        }else{
+            number = 0;
+            count.innerHTML = `<h2>Count is ${number}</h2>`
+        }
+    })
+    });
+</script>
+</html>

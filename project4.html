@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #display {
+      font-size: 2em;
+      margin: 20px;
+    }
+
+    #controls {
+      margin: 20px;
+    }
+
+    button {
+      font-size: 1em;
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stopwatch</h1>
+  <div id="display">00:00:00</div>
+  <div id="controls">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+  </div>
+<script>
+    var timer = 0;  //this will tic for clock.
+
+    var  sec = 0;
+    var  min = 0;
+    var  hr = 0;
+
+    const body = document.querySelector("#display");
+
+
+    const start = document.querySelector('#start');
+    const stop = document.querySelector('#stop');
+    const reset = document.querySelector('#reset');
+    
+
+    function printTime() {
+      body.innerHTML = `<p>${hr} : ${min} : ${sec}</p>`;
+    }
+    var timeinterval ;
+    start.addEventListener("click",()=>{
+        timeinterval =  setInterval(()=>{
+            timer++;
+            if(timer){
+                sec = timer;
+                printTime();
+                console.log("sec : ", sec);
+                if(sec == 60){
+                    min++;
+                    timer = 0;
+                printTime();
+
+                    console.log("sec : ",sec);
+                    console.log("min : ",min);
+                }
+                if(min == 60){
+                    hr++;
+                    min=0;
+                printTime();
+
+                    console.log("sec : ",sec);
+                    console.log("min : ",min);
+                    console.log("hr : ",hr);
+                }
+            }
+
+
+        },1000)
+    });
+
+    stop.addEventListener("click",()=>{
+        clearInterval(timeinterval);
+        console.log("ayush");
+        hr  = 0;
+        min = 0;
+        sec = 0;
+      body.innerHTML = `<p>${hr} : ${min} : ${sec}</p>`;
+
+    });
+
+
+    
+</script>
+</body>
+</html>
