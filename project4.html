@@ -85,7 +85,13 @@
         min = 0;
         sec = 0;
       body.innerHTML = `<p>${hr} : ${min} : ${sec}</p>`;
-    });    
+    });   
+    
+    stop.addEventListener("click",()=>{
+        clearInterval(timeinterval);
+        console.log("ayush");
+      body.innerHTML = `<p>${hr} : ${min} : ${sec}</p>`;
+    }); 
 </script>
 </body>
 </html>
