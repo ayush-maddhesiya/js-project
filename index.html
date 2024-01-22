@@ -4,42 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Profile</title>
-</head>
-<body bgcolor = "#212121">
-    <h3>
-         This is list of JS-project.
-    </h3>
-    <br>
 
-    <table>
-         <tr>
-            <th><a href="project1.html">Bubble Game.</a></th>
-        </tr>
-        <tr>
-        
-            <th><a href="project2.html">Color Flipper.</a></th>
-        </tr>
-        <tr>
-        
-            <th><a href="project3.html">Counter</a></th>
-        </tr>
-        <tr>
-        
-            <th><a href="project4.html">Stopwatch.</a></th>
-        </tr>
-        <tr>
-            <th><a href="project05.html">Ramdon Color</a></th>
-        </tr>
-        <tr>
-        
-            <th><a href="project06.html">Counter</a></th>
-        </tr>
-        <tr>
-        
-            <th><a href="project07.html">Reviews</a></th>
-        </tr>
-        
-    </table>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h3 {
+            color: #64B5F6;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: #424242;
+            color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            width: calc(25% - 20px); /* Adjust width and margin for 4 cards per row */
+            box-sizing: border-box;
+        }
+
+        .card a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Different colors for each card */
+        .card:nth-child(1) {
+            background-color: #EF5350;
+        }
+
+        .card:nth-child(2) {
+            background-color: #AB47BC;
+        }
+
+        .card:nth-child(3) {
+            background-color: #42A5F5;
+        }
+
+        .card:nth-child(4) {
+            background-color: #66BB6A;
+        }
+
+        .card:nth-child(5) {
+            background-color: #FFA726;
+        }
+
+        .card:nth-child(6) {
+            background-color: #EC407A;
+        }
+
+        .card:nth-child(7) {
+            background-color: #FFCA28;
+        }
+
+        .card:nth-child(8) {
+            background-color: #78909C;
+        }
+    </style>
+</head>
+<body>
+    <h3>This is a list of JS projects.</h3>
+
+    <div class="card-container">
+        <div class="card">
+            <a href="project1.html">Bubble Game</a>
+        </div>
+
+        <div class="card">
+            <a href="project2.html">Color Flipper</a>
+        </div>
+
+        <div class="card">
+            <a href="project3.html">Counter</a>
+        </div>
+
+        <div class="card">
+            <a href="project4.html">Stopwatch</a>
+        </div>
+
+        <div class="card">
+            <a href="project05.html">Random Color</a>
+        </div>
+
+        <div class="card">
+            <a href="project06.html">Counter</a>
+        </div>
+
+        <div class="card">
+            <a href="project07.html">Reviews</a>
+        </div>
+    </div>
 
 </body>
 </html>
