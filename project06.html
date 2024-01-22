@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #counter-container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #counter {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        text{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #45a049;
+            
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Stylish Counter</title>
+</head>
+<body>
+    <div id="counter-container">
+    <h2 id = "text">Counter</h2>
+        <div id="counter">0</div>
+        <!-- <p id="button">0</p> -->
+        <button onclick="increase()">Increase</button>
+        <button onclick="decrease()">Decrease</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        let count = localStorage.getItem("counter") || 0 ;
+        let newval = 4
+        function updatecounter(){
+            document.getElementById("counter").innerText = count;
+            // document.getElementById("button").innerText = newval;
+            localStorage.setItem("counter",count)
+            // localStorage.setItem("button",newval)
+        }
+        function increase(){
+            count++;
+            updatecounter();
+        }
+        function decrease(){
+            count--;
+            updatecounter();
+        }
+        function reset(){
+            count=0;
+            updatecounter();
+        }
+        updatecounter();
+    </script>
+
+</body>
+</html>
