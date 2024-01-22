@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Change</title>
+    <style>
+        body {
+            background-color: #3498db; /* You can replace this with your desired color code */
+            color: #ffffff; /* Text color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            background-color: #2ecc71; /* Button color */
+            color: #ffffff; /* Text color */
+            padding: 10px 20px;
+            font-size: 16px;
+            border:11px;
+            border-radius: 3%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Color Changer</h1>
+    <span>
+        <p>Background color changed  : </p>
+        <p id="text-colorcode">#3498db</p>
+    </span>
+    <button id="hit-me">Hit me Daddy!!</button>
+
+    <script>
+        const hex = [1,2,3,4,5,6,7,8,9,0,"A","B","C","D","E","F"]
+        var text  = document.getElementById("text-colorcode")
+        const btn  = document.getElementById('hit-me')
+        btn.addEventListener("click",()=>{
+            setbgc();
+        })
+        
+        function setbgc(){
+            let color = "#";
+            for (let index = 0; index < 6; index++){
+                     const temp = Math.floor(Math.random()*16)
+                     color += hex[temp];
+             }
+             document.body.style.backgroundColor = color
+             text.innerHTML = `<p id="text-colorcode">${color}</p>`
+             console.log(color);
+        }
+        
+        
+    </script>
+
+</body>
+</html>
