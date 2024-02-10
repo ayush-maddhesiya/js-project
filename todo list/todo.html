@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .cheaked{
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+    <h2>todo list </h2>
+    <ul class="todo-list">
+        <li class="cheaked">task1</li>
+        <li>taks3</li>
+        <li>task4</li>
+    </ul>
+    <script>
+        // Wait for the DOM content to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the list container
+    const listContainer = document.getElementById('List-container');
+
+    // Add event listener to the list container
+    listContainer.addEventListener('click', function(event) {
+        // Check if the clicked element is an <li> element
+        if (event.target.tagName === 'LI') {
+            // Toggle the 'checked' class on the clicked <li> element
+            event.target.classList.toggle('checked');
+            // Optionally, you can save the data after toggling the class
+            saveData();
+        }
+    });
+});
+
+// Function to save data (you need to define this function)
+function saveData() {
+    // Add your logic to save data here
+    console.log('Data saved.'); // For testing purposes
+}
+
+    
+    </script>
+</body>
+
+</html>
